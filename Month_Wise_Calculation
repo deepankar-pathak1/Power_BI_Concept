@@ -1,0 +1,31 @@
+Last_Months test SA = 
+
+var p = CALCULATE(Max('Date'[Date]),DimDate[CalendarYear] in VALUES('Date'[Year]),DimDate[EnglishMonthName] in VALUES('Date'[MonthName]),DimDate[DayNumberOfMonth] in VALUES('Date'[Day]))
+
+return
+CALCULATE(SUM(CustomerSales[Sale])/1000000,DATESINPERIOD(DimDate[Date],p,-1,MONTH))
+
+
+
+
+*********---******************
+
+
+
+Last_2_Months test SA = 
+
+var p = CALCULATE(Max('Date'[Date]),DimDate[CalendarYear] in VALUES('Date'[Year]),DimDate[EnglishMonthName] in VALUES('Date'[MonthName]),DimDate[DayNumberOfMonth] in VALUES('Date'[Day]))
+
+return
+CALCULATE(SUM(CustomerSales[Sale])/1000000,DATESINPERIOD(DimDate[Date],p,-2,MONTH))
+
+
+
+
+---**************-----
+
+
+
+onlyy_Last_2_Months test SA = 
+
+[Last_2_Months test SA] - [Last_Months test SA]
