@@ -1,0 +1,17 @@
+-- if we want to plot in bar graph last 6 month sales we can use this dax
+
+TTM_sales = 
+var currentdate=MAX('Date'[Date])
+// var previousdate=DATE(YEAR(currentdate),MONTH(currentdate)-6,DAY(currentdate))
+var previousdate=DATE(YEAR(currentdate),MONTH(currentdate)-5,1)
+var result=CALCULATE(SUM(Vw_Sales[Sale])/1000000,FILTER(DimDate,DimDate[Date]>=previousdate && DimDate[Date]<=currentdate))
+
+return result
+
+
+
+
+
+
+-- it will filter out last 6 month dates on the basis of month you have selected from slicer 
+
