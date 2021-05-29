@@ -1,0 +1,15 @@
+Top_Prarties = 
+
+VAR SelectedTop =  SELECTEDVALUE(Top_TAT_BO_Check_[Top_TAT_BO_Check_])
+
+RETURN
+
+SWITCH(TRUE(),
+    SelectedTop = 0,Tat_Bo_Check[TAT_BO_Map] ,
+    RANKX ( 
+            ALLSELECTED(VW_DimCustomer[Customer Code with Name]), 
+           Tat_Bo_Check[TAT_BO_Map]
+                )
+                  <= SelectedTop,
+       Tat_Bo_Check[TAT_BO_Map]
+)
