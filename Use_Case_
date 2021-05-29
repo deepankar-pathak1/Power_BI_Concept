@@ -1,0 +1,72 @@
+TAT_BO_Map = 
+ 
+var a = if(SELECTEDVALUE(TAT_BO[Phase]) = "Execution Phase: Pending with BM",1)
+var b = CALCULATE(max(TAT_BO[BM2actiondays]),FILTER(TAT_BO,TAT_BO[Phase] = "Execution Phase: Pending with BM"))
+ 
+var c = if(SELECTEDVALUE(TAT_BO[Phase]) = "Execution Phase: Pending with NSM",1)
+var d = CALCULATE(max(TAT_BO[NSM3actiondays]),FILTER(TAT_BO,TAT_BO[Phase] = "Execution Phase: Pending with NSM"))
+ 
+var e = if(SELECTEDVALUE(TAT_BO[Phase]) = "Execution Phase: Pending with PSM",1)
+var f = CALCULATE(max(TAT_BO[PSM1actiondays]),FILTER(TAT_BO,TAT_BO[Phase] = "Execution Phase: Pending with PSM"))
+ 
+var g = if(SELECTEDVALUE(TAT_BO[Phase]) = "Execution Phase: Pending with ZLCSM",1)
+var h = CALCULATE(max(TAT_BO[ZLCSMactiondays]),FILTER(TAT_BO,TAT_BO[Phase] = "Execution Phase: Pending with ZLCSM"))
+ 
+var i = if(SELECTEDVALUE(TAT_BO[Phase]) = "Initiation and Approval: Pending with NSM",1)
+var j = CALCULATE(max(TAT_BO[NSM1actiondays]),FILTER(TAT_BO,TAT_BO[Phase] = "Initiation and Approval: Pending with NSM"))
+ 
+var k = if(SELECTEDVALUE(TAT_BO[Phase]) = "Legal Phase: Pending with HO Accounts for cheque deposition",1)
+var l = CALCULATE(max(TAT_BO[HO4actiondays]),FILTER(TAT_BO,TAT_BO[Phase] = "Legal Phase: Pending with HO Accounts for cheque deposition"))
+ 
+var m = if(SELECTEDVALUE(TAT_BO[Phase]) = "Legal Phase: Pending with HO Accounts for transfer to legal",1)
+var n = CALCULATE(max(TAT_BO[HO5actiondays]),FILTER(TAT_BO,TAT_BO[Phase] = "Legal Phase: Pending with HO Accounts for transfer to legal"))
+ 
+var o = if(SELECTEDVALUE(TAT_BO[Phase]) = "Legal Phase: Pending with Legal-1",1)
+var p = CALCULATE(max(TAT_BO[LEGAL1actiondays]),FILTER(TAT_BO,TAT_BO[Phase] = "Legal Phase: Pending with Legal-1"))
+ 
+var q = if(SELECTEDVALUE(TAT_BO[Phase]) = "Legal Phase: Pending with Legal-2",1)
+var r = CALCULATE(max(TAT_BO[LEGAL2actiondays]),FILTER(TAT_BO,TAT_BO[Phase] = "Legal Phase: Pending with Legal-2"))
+ 
+var s = if(SELECTEDVALUE(TAT_BO[Phase]) = "Legal Phase: Pending with RLAM",1)
+var t = CALCULATE(max(TAT_BO[RLCSMactiondays]),FILTER(TAT_BO,TAT_BO[Phase] = "Legal Phase: Pending with RLAM"))
+ 
+var u = if(SELECTEDVALUE(TAT_BO[Phase]) = "Pending with DFM for write off",1)
+var v = CALCULATE(max(TAT_BO[DFMactiondays]),FILTER(TAT_BO,TAT_BO[Phase] = "Pending with DFM for write off"))
+ 
+var w = if(SELECTEDVALUE(TAT_BO[Phase]) = "Pending with HO Accounts for Closure: Z8",1)
+var x = CALCULATE(max(TAT_BO[HO3actiondays]),FILTER(TAT_BO,TAT_BO[Phase] = "Pending with HO Accounts for Closure: Z8"))
+ 
+var z = if(SELECTEDVALUE(TAT_BO[Phase]) = "Pending with HO Accounts for SD adjustment & reconciliation",1)
+var a_1 = CALCULATE(max(TAT_BO[HO1actiondays]),FILTER(TAT_BO,TAT_BO[Phase] = "Pending with HO Accounts for SD adjustment & reconciliation"))
+ 
+var b_1 = if(SELECTEDVALUE(TAT_BO[Phase]) = "Planning Phase: Pending with BM",1)
+var c_1 = CALCULATE(max(TAT_BO[BM1actiondays]),FILTER(TAT_BO,TAT_BO[Phase] = "Planning Phase: Pending with BM"))
+ 
+var d_1 = if(SELECTEDVALUE(TAT_BO[Phase]) = "Planning Phase: Pending with NSM(Category 2)",1)
+var e_1 = CALCULATE(max(TAT_BO[NSM2actiondays]),FILTER(TAT_BO,TAT_BO[Phase] = "Planning Phase: Pending with NSM(Category 2)"))
+ 
+ 
+return 
+switch(
+true(),
+a = 1,b,
+c = 1,d,
+e = 1,f,
+g = 1,h,
+i = 1,j,
+k = 1,l,
+m = 1,n,
+o =1,p,
+q = 1,r,
+s = 1,t,
+u = 1,v,
+w= 1,x,
+z = 1,a_1,
+b_1 =1,c_1,
+d_1 = 1,e_1
+
+
+
+ 
+ 
+)
